@@ -1,38 +1,119 @@
 .App {
-  text-align: center;
+    width: 70%;
+    margin: 2rem auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgba(118, 142, 165, 0.247);
+    border-radius: 0.25rem;
+    padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form>label {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nazivLabel {
+    grid-column: span 7;
 }
 
-.App-link {
-  color: #61dafb;
+.ocjenaLabel {
+    grid-column: span 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submitBox {
+    grid-column: span 3;
+}
+
+.submit {
+    color: rgba(255, 255, 255, 0.76);
+    font-weight: bolder;
+    background-color: rgba(80, 80, 80, 0.7);
+    padding: 0.5rem;
+
+    box-sizing: border-box;
+
+
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: rgba(80, 80, 80, 0.3);
+    color: rgba(8, 8, 8, 0.76);
+}
+
+.form * input {
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid gray;
+    border-radius: 0.25rem;
+}
+
+.sveRecenzijeContainer {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recenzijaContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-bottom: 1px solid gray;
+    padding: 0.5rem;
+}
+
+.pRecenzija {
+    grid-column: span 12;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: large;
+}
+
+.pDatum {
+    grid-column: span 12;
+    margin-top: 0.25rem;
+    color: gray;
+    font-size: x-small;
+}
+
+.spanNeFavorit,
+.spanDaFavorit {
+    grid-column: -2 / -4;
+    text-align: center;
+    text-decoration: underline;
+    padding: 0.7rem 0.3rem;
+}
+
+.spanNeFavorit:hover {
+    cursor: pointer;
+    background-color: rgba(118, 165, 126, 0.514);
+    border-radius: 0.35rem;
+}
+
+
+.spanDaFavorit:hover {
+    cursor: pointer;
+    background-color: rgba(158, 103, 103, 0.247);
+    border-radius: 0.35rem;
+
+}
+
+.spanObrisi {
+    grid-column: span -1 / -2;
+    text-decoration: underline;
+    text-align: center;
+    padding: 0.7rem 0.3rem;
+}
+
+.spanObrisi:hover {
+    cursor: pointer;
+    background-color: rgba(179, 91, 91, 0.6);
+    border-radius: 0.35rem;
 }
