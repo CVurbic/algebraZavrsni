@@ -6,10 +6,6 @@ import SveRecenzije from './components/SveRecenzije';
 
 
 function App() {
-
-
-
-
   const [reviews, setReviews] = useState([])
 
 
@@ -36,12 +32,15 @@ function App() {
     setReviews(updatedReviewsList);
     localStorage.setItem("reviews", JSON.stringify(updatedReviewsList))
   };
+
   const handleRemoveReview = (index) => {
     const updatedReviewsList = [...reviews];
     updatedReviewsList.splice(index, 1)
     setReviews(updatedReviewsList)
     localStorage.setItem("reviews", JSON.stringify(updatedReviewsList))
   }
+
+
   return (
     <div className="App">
 
