@@ -1,30 +1,33 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 
-
-
-
+// Funkcionalna komponenta za unos nove recenzije
 function Form({ handleFormSubmit }) {
+    // Referenca za unos teksta recenzije
+    const textRef = useRef();
+    // Referenca za unos ocjene
+    const gradeRef = useRef();
 
-    const textRef = useRef()
-    const gradeRef = useRef()
-
+    // Funkcija koja se poziva pri podnošenju obrasca
     const handleSubmit = () => {
-        const recenzija = textRef.current.value
-        const ocjena = Number(gradeRef.current.value)
+        // Dohvaćanje unesenog teksta recenzije i ocjene
+        const recenzija = textRef.current.value;
+        const ocjena = Number(gradeRef.current.value);
+        // Provjera dužine teksta recenzije i ispravnosti ocjene
         if (recenzija.length <= 3) {
-            alert('Recenzija mora sadržavati više od 3 znaka')
-            return
+            alert('Recenzija mora sadržavati više od 3 znaka');
+            return;
         }
         if (ocjena > 10 || ocjena < 1) {
-            alert("Odaberite ocjenu između 1 i  10")
-            return
+            alert("Odaberite ocjenu između 1 i 10");
+            return;
         }
+        // Dobivanje trenutnog vremena i datuma
         const datum = new Date(Date.now()).toLocaleString();
-        handleFormSubmit(recenzija, ocjena, datum)
-        //spremanje u localStorage
-        console.log(recenzija, ocjena)
+        // Poziv funkcije za dodavanje nove recenzije
+        handleFormSubmit(recenzija, ocjena, datum);
     }
 
+    // Renderiranje forme za unos recenzije
     return (
         <div className='form'>
             <label className='nazivLabel'>
@@ -36,12 +39,12 @@ function Form({ handleFormSubmit }) {
                 <input className='ocjenaInput' type="number" required min={1} max={10} ref={gradeRef} />
             </label>
             <label className='submitBox'>
-
                 <br />
+                {/* Dugme za podnošenje obrasca */}
                 <button className="submit" onClick={handleSubmit}>Pohrani</button>
             </label>
         </div>
     )
 }
 
-export default Form
+export default Form;

@@ -1,119 +1,188 @@
+/* Stilizacija glavne aplikacije */
 .App {
     width: 70%;
+    /* Širina aplikacije */
     margin: 2rem auto;
+    /* Margine za centriranje */
 }
 
+/* Stilizacija forme za unos recenzija */
 .form {
     display: grid;
+    /* Koristi CSS Grid za postavljanje elemenata u formi */
     grid-template-columns: repeat(12, 1fr);
+    /* Grid raspored s 12 kolona */
     justify-content: center;
+    /* Centriranje elemenata u formi */
     gap: 1rem;
+    /* Razmak između elemenata */
     background-color: rgba(118, 142, 165, 0.247);
+    /* Boja pozadine forme */
     border-radius: 0.25rem;
+    /* Zaobljeni rubovi */
     padding: 1rem;
+    /* Padding unutar forme */
 }
 
+/* Stilizacija labela unutar forme */
 .form>label {
     box-sizing: border-box;
+    /* Kutija-model: granica uključuje padding i border */
     display: flex;
+    /* Prikaz labela u koloni */
     flex-direction: column;
+    /* Smjer kolone */
 }
 
+/* Stilizacija labela za unos naziva */
 .nazivLabel {
     grid-column: span 7;
+    /* Raspored za širinu 7 kolona */
 }
 
+/* Stilizacija labela za unos ocjene */
 .ocjenaLabel {
     grid-column: span 2;
+    /* Raspored za širinu 2 kolone */
 }
 
+/* Stilizacija box-a za submit */
 .submitBox {
     grid-column: span 3;
+    /* Raspored za širinu 3 kolone */
 }
 
+/* Stilizacija dugmeta za submit */
 .submit {
     color: rgba(255, 255, 255, 0.76);
+    /* Boja teksta */
     font-weight: bolder;
+    /* Debljina fonta */
     background-color: rgba(80, 80, 80, 0.7);
+    /* Boja pozadine */
     padding: 0.5rem;
-
+    /* Padding unutar dugmeta */
     box-sizing: border-box;
-
-
+    /* Kutija-model */
 }
 
 .submit:hover {
     cursor: pointer;
+    /* Pokazivač kursora */
     background-color: rgba(80, 80, 80, 0.3);
+    /* Boja pozadine na hover */
     color: rgba(8, 8, 8, 0.76);
+    /* Boja teksta na hover */
 }
 
+/* Stilizacija unosa u formi */
 .form * input {
     padding: 0.5rem;
+    /* Padding unutar unosa */
     background-color: rgba(0, 0, 0, 0);
+    /* Prozirna boja pozadine */
     border: 2px solid gray;
+    /* Boja granice */
     border-radius: 0.25rem;
+    /* Zaobljeni rubovi */
 }
 
+/* Stilizacija kontejnera za sve recenzije */
 .sveRecenzijeContainer {
     margin-top: 4rem;
+    /* Margina od vrha */
     display: flex;
+    /* Prikaz recenzija u redu */
     flex-direction: column;
+    /* Smjer kolone */
     gap: 1rem;
+    /* Razmak između recenzija */
 }
 
+/* Stilizacija kontejnera za pojedinu recenziju */
 .recenzijaContainer {
     display: grid;
+    /* Koristi CSS Grid za postavljanje elemenata */
     grid-template-columns: repeat(12, 1fr);
+    /* Grid raspored s 12 kolona */
     border-bottom: 1px solid gray;
+    /* Donja granica */
     padding: 0.5rem;
+    /* Padding unutar kontejnera */
 }
 
+/* Stilizacija teksta recenzije */
 .pRecenzija {
     grid-column: span 12;
+    /* Raspored za širinu 12 kolona */
     font-weight: 500;
+    /* Debljina fonta */
     margin-bottom: 0;
+    /* Margina ispod teksta */
     font-size: large;
+    /* Veličina fonta */
 }
 
+/* Stilizacija datuma */
 .pDatum {
     grid-column: span 12;
+    /* Raspored za širinu 12 kolona */
     margin-top: 0.25rem;
+    /* Margina iznad teksta */
     color: gray;
+    /* Boja teksta */
     font-size: x-small;
+    /* Veličina fonta */
 }
 
+/* Stilizacija ikone za dodavanje/uklanjanje iz favorita */
 .spanNeFavorit,
 .spanDaFavorit {
     grid-column: -2 / -4;
+    /* Raspored za zadnje dvije kolone */
     text-align: center;
+    /* Centriranje teksta */
     text-decoration: underline;
+    /* Podcrtani tekst */
     padding: 0.7rem 0.3rem;
+    /* Padding unutar ikone */
 }
 
 .spanNeFavorit:hover {
     cursor: pointer;
+    /* Pokazivač kursora */
     background-color: rgba(118, 165, 126, 0.514);
+    /* Boja pozadine na hover */
     border-radius: 0.35rem;
+    /* Zaobljeni rubovi */
 }
-
 
 .spanDaFavorit:hover {
     cursor: pointer;
+    /* Pokazivač kursora */
     background-color: rgba(158, 103, 103, 0.247);
+    /* Boja pozadine na hover */
     border-radius: 0.35rem;
-
+    /* Zaobljeni rubovi */
 }
 
+/* Stilizacija ikone za brisanje recenzije */
 .spanObrisi {
     grid-column: span -1 / -2;
+    /* Raspored za zadnju kolonu */
     text-decoration: underline;
+    /* Podcrtani tekst */
     text-align: center;
+    /* Centriranje teksta */
     padding: 0.7rem 0.3rem;
+    /* Padding unutar ikone */
 }
 
 .spanObrisi:hover {
     cursor: pointer;
+    /* Pokazivač kursora */
     background-color: rgba(179, 91, 91, 0.6);
+    /* Boja pozadine na hover */
     border-radius: 0.35rem;
+    /* Zaobljeni rubovi */
 }
